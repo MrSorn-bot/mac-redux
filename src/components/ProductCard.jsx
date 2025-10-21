@@ -1,11 +1,12 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Button, Card, Text } from "react-native-paper";
-
+import { useDispatch, useSelector } from "react-redux";
+import { add, remove } from "../store/cartSlice";
 
 export default function ProductCard({ item }) {
   const { id, name, price, image } = item;
-
+const dispatch = useDispatch();
 
   return (
     <View style={styles.container}>
@@ -16,7 +17,7 @@ export default function ProductCard({ item }) {
           <Text variant="titleMedium">${price}</Text>
         </Card.Content>
         <Card.Actions>
-          <Button mode="contained">Add To Cart</Button>
+          <Button mode="contained" onPress={() => dispatch(add(item))} >Add To Cart</Button>
         </Card.Actions>
       </Card>
     </View>

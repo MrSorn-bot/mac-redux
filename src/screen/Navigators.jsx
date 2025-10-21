@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./HomeScreen";
+import CartScreen from "./CartScreen";
 import { Provider as PaperProvider, Button } from 'react-native-paper';
 
 const Tab = createBottomTabNavigator();
@@ -35,7 +36,7 @@ export default function Navigators() {
             tabBarInactiveTintColor: "gray",
           })}>
           <Tab.Screen name="HOME" component={HomeScreen} />
-          <Tab.Screen name="CART" component={HomeScreen} />
+          <Tab.Screen name="CART" component={CartScreen} />
           <Tab.Screen name="SETTING" component={HomeScreen} />
         </Tab.Navigator>
      
