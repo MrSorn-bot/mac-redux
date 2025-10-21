@@ -6,11 +6,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./HomeScreen";
 import CartScreen from "./CartScreen";
 import { Provider as PaperProvider, Button } from 'react-native-paper';
-
+import { useSelector } from "react-redux";
+import { Badge } from "react-native-paper";
 const Tab = createBottomTabNavigator();
 
 
 export default function Navigators() {
+     const cartList = useSelector((state) => state.cartState.cartList);
+
   return (
     <View style={styles.container}>
       
@@ -24,6 +27,18 @@ export default function Navigators() {
                 iconName = "home";
               } else if (route.name === "CART") {
                 iconName = "cart";
+                                return (
+                  <View>
+                    <Ionicons name={iconName} size={size} color={color} />
+                    <Badge
+                      size={15}
+                      style={{ position: "absolute", top: -5, right: -5 }}
+                    >
+                      {cartList.length}
+                    </Badge>
+                  </View>
+                );
+
               } else if (route.name === "SETTING") {
                 iconName = "settings";
               }
