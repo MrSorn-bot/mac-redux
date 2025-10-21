@@ -1,4 +1,4 @@
-package com.macredux
+package com.anonymous.macredux
 
 import android.app.Application
 import android.content.res.Configuration

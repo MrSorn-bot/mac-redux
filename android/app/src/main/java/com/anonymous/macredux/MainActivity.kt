@@ -1,4 +1,4 @@
-package com.macredux
+package com.anonymous.macredux
 
 import android.os.Build
 import android.os.Bundle

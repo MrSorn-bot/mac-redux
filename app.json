@@ -2,6 +2,15 @@
   "expo": {
     "name": "mac-redux",
     "slug": "mac-redux",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "plugins": [
+      "expo-asset"
+    ],
+    "android": {
+      "package": "com.anonymous.macredux"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.macredux"
+    }
   }
 }
