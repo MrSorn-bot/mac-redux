@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./HomeScreen";
-
+import { Provider as PaperProvider, Button } from 'react-native-paper';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function Navigators() {
   return (
     <View style={styles.container}>
-      <NavigationContainer>
+      
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ color, size }) => {
@@ -33,13 +33,12 @@ export default function Navigators() {
             },
             tabBarActiveTintColor: "tomato",
             tabBarInactiveTintColor: "gray",
-          })}
-        >
+          })}>
           <Tab.Screen name="HOME" component={HomeScreen} />
           <Tab.Screen name="CART" component={HomeScreen} />
           <Tab.Screen name="SETTING" component={HomeScreen} />
         </Tab.Navigator>
-      </NavigationContainer>
+     
     </View>
   );
 }
